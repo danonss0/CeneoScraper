@@ -35,8 +35,8 @@ for opinion in opinions:
         "thumbs_up":opinion.select_one("button.vote-yes > span").text.strip(),
         "thumbs_down":opinion.select_one("button.vote-no > span").text.strip(),
         "content":opinion.select_one("div.user-post__text").text.strip(),
-        "cons": [cons.text.strip() for cons in opinion.select("div.review-feature__col:has(> div.review-feature__title--negatives) > div.reviev-feature__item")],
-        "pros": [pros.text.strip() for pros in opinion.select("div.review-feature__col:has(> div.review-feature__title--positives) > div.reviev-feature__item")],
+        "cons": [cons.text.strip() for cons in opinion.select("div.review-feature__col:has(> div.review-feature__title--negatives) > div.review-feature__item")],
+        "pros": [pros.text.strip() for pros in opinion.select("div.review-feature__col:has(> div.review-feature__title--positives) > div.review-feature__item")],
         
     }
     all_opinions.append(single_opinion)
